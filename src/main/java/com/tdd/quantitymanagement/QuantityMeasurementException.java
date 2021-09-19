@@ -2,7 +2,7 @@ package com.tdd.quantitymanagement;
 
 public class QuantityMeasurementException extends Exception{
     enum ExceptionType{
-        NULL_EXCEPTION
+        NULL_EXCEPTION,REFERENCE_EXCEPTION
     }
     ExceptionType exceptionType;
     public QuantityMeasurementException(String message,ExceptionType type){
