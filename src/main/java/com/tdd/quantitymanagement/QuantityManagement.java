@@ -10,4 +10,8 @@ public class QuantityManagement
     {
         System.out.println( "Welcome to Quantity Management Program" );
     }
+
+    public boolean compareInputLengths(String s, String s1) {
+        return s.equals(s1);
+    }
 }

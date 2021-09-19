@@ -9,9 +9,10 @@ import org.junit.Test;
  */
 public class QuantityManagementTest
 {
+    QuantityManagement measure = new QuantityManagement();
     @Test
-    public void shouldAnswerWithTrue()
+    public void givenParametersIfEqual_shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        assertTrue( measure.compareInputLengths("0ft","0ft"));
     }
 }
