@@ -10,7 +10,7 @@ public class InputLength {
         if (input.contains("ft")) {
             String[] inputLength = input.split("ft");
             value = inputLength[0];
-            type = "ft";
+            type = "length";
         } else {
             value = "";
             type = "";
@@ -21,8 +21,16 @@ public class InputLength {
         if (input.contains("ft")) {
             String[] inputLength = input.split("ft");
             value = inputLength[0];
-            type = "ft";
-        } else {
+            type = "length";
+        } else if(input.contains("in")){
+            String[] inputLength = input.split("in");
+            value = inputLength[0];
+            type = "length";
+        } else if(input.contains("ml")){
+            String[] inputLength = input.split("ml");
+            value = inputLength[0];
+            type = "volume";
+        }else {
             value = "";
             type = "";
         }
@@ -32,8 +40,16 @@ public class InputLength {
         if (input.contains("ft")) {
             String[] inputLength = input.split("ft");
             value1 = inputLength[0];
-            type1 = "ft";
-        } else {
+            type1 = "length";
+        } else if (input.contains("in")) {
+                String[] inputLength = input.split("in");
+                value1 = inputLength[0];
+                type1 = "length";
+        } else if (input.contains("ml")) {
+            String[] inputLength = input.split("ml");
+            value1 = inputLength[0];
+            type1 = "volume";
+        }else {
             value1 = "";
             type1 = "";
         }

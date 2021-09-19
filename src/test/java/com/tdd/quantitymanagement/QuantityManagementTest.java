@@ -73,7 +73,7 @@ public class QuantityManagementTest
             assertEquals(QuantityMeasurementException.ExceptionType.REFERENCE_EXCEPTION,e.exceptionType);
         }
     }
-    //
+    // checks if input has same reference and equal input lengths
     @Test
     public void givenInputLength_checksReference_shouldReturnTrue() throws Exception{
         try{
@@ -83,6 +83,42 @@ public class QuantityManagementTest
             assertTrue(measure.compareInputLengths(input));
         } catch (QuantityMeasurementException e){
             assertEquals(QuantityMeasurementException.ExceptionType.REFERENCE_EXCEPTION,e.exceptionType);
+        }
+    }
+    // given two parameter checks type and returns exception if
+    @Test
+    public void givenInputLengths_checksType_shouldReturnTypeException() throws Exception {
+        try{
+            InputLength input = new InputLength();
+            input.setLength("0 ft");
+            input.setLength1("0 ml");
+            assertTrue(measure.compareInputLengths(input));
+        } catch (QuantityMeasurementException e){
+            assertEquals(QuantityMeasurementException.ExceptionType.TYPE_EXCEPTION,e.exceptionType);
+        }
+    }
+    // given two parameter checks type
+    @Test
+    public void givenInputLengths_checksType_shouldReturnTrue() throws Exception {
+        try{
+            InputLength input = new InputLength();
+            input.setLength("0 ft");
+            input.setLength1("0 ft");
+            assertTrue(measure.compareInputLengths(input));
+        } catch (QuantityMeasurementException e){
+            assertEquals(QuantityMeasurementException.ExceptionType.TYPE_EXCEPTION,e.exceptionType);
+        }
+    }
+    // given two parameter checks type
+    @Test
+    public void givenTwoParameters_checksType_shouldAnswerWithTrue() throws Exception {
+        try {
+            InputLength input = new InputLength();
+            input.setLength("0 ft");
+            input.setLength1("0 in");
+            assertTrue(measure.compareInputLengths(input));
+        } catch (QuantityMeasurementException e){
+            e.printStackTrace();
         }
     }
 }
